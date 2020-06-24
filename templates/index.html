@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>India's fight against COVID-19</title>
         <style>
+            div{
+                font-weight: bold;
+            }
             h1,h2{
                 color:darkslateblue;
                 text-align: center;
@@ -13,10 +18,15 @@
                 margin-right: auto;
                 width: 50%;
                 }
-            table,thead,td{
+            table,thead{
                 word-wrap: normal;
-                border: 1px solid black;
+                border: 2px solid black;
                 text-align: center;
+                border-collapse: collapse;
+            }
+            td,th{
+                border: 2px solid black;
+                padding: 5px;
             }
         </style>
     </head>
@@ -24,19 +34,29 @@
         <h1>India</h1>
         <table>
             <thead>
-                <td>Location</td>
-                <td>Confirmed(Today)</td>
-                <td>Active(Today)</td>
-                <td>Recovered(Today)</td>
-                <td>Deaths(Today)</td>
-                <td>Case Fatality Ratio</td>
-                <td>Recovery-Death Ratio</td>
+                <th>Location</th>
+                <th>Confirmed(Today)</th>
+                <th>Active(Today)</th>
+                <th>Recovered(Today)</th>
+                <th>Deaths(Today)</th>
+                <th>Case Fatality Rate</th>
+                <th>Recovery Ratio</th>
+                <th>Recovery-Death Ratio</th>
             </thead>
             <tbody>
-                <td></td>
+            {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
+                <td>{{i}}</td>
+                <td>{{j}}({{k}})</td>
+                <td>{{l}}({{m}})</td>
+                <td>{{n}}({{o}})</td>
+                <td>{{p}}({{q}})</td>
+                <td>{{r}}</td>
+                <td>{{s}}</td>
+                <td>{{t}}</td> 
             </tbody>
+            {% endfor %}
         </table>
-        <h1>India's Graph</h1>
+        <!-- <h1>India's Graph</h1>
         <h2>Total Cases</h2>
         <img src='covidataconf.jpg' alt='Total cases graph' width="800"class='center' >
         <h2>Active Cases</h2>
@@ -44,6 +64,6 @@
         <h2>Recovered Cases</h2>
         <img src='covidatarec.jpg' alt='Recovered cases graph' width="800"class='center' >       
         <h2>Deaths</h2>
-        <img src='covidatadth.jpg' alt='Deaths graph' width="800" class='center'>
+        <img src='covidatadth.jpg' alt='Deaths graph' width="800" class='center'> -->
     </body>
 </html>
