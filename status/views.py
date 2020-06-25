@@ -32,7 +32,7 @@ class HomeView(View):
             try:
                 cfr.append(round(100*dth[i]/conf[i], 2))
             except:
-                cfr.append(int('0'))
+                cfr.append(float('0.0'))
             try:
                 rr.append(round(100*rec[i]/conf[i], 2))
             except:
