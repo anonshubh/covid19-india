@@ -48,11 +48,11 @@ class HomeView(View):
         state[0] = 'India'
         for i in range(38):
             join=[]
-            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],cfr[i],rr[i],rdr[i]])
-            combined.append(join)
-        data = zip(state,conf,delconf,act,delact,rec,delrec,dth,deldth,cfr,rr,rdr)
+            data = zip([state[i]],[conf[i]],[delconf[i]],[act[i]],[delact[i]],[rec[i]],[delrec[i]],[dth[i]],[cfr[i]],[rr[i]],[rdr[i]])
+            #join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],cfr[i],rr[i],rdr[i]])
+            combined.append(data)
         context = {
-            'data':data
+            
         }
         return render(request,'index.html',context)
 

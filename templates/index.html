@@ -22,15 +22,17 @@
                 <th>Recovery-Death Ratio</th>
             </thead>
             <tbody>
-            {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
-                <td>{{i}}</td>
-                <td>{{j}}({{k}})</td>
-                <td>{{l}}({{m}})</td>
-                <td class='recovered'>{{n}}({{o}})</td>
-                <td class='death'>{{p}}({{q}})</td>
-                <td>{{r}} %</td>
-                <td>{{s}} {% if not 'No cases confirmed' %}%{% endif %}</td>
-                <td>{{t}}</td> 
+            {% for data in combined %}
+                {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
+                    <td>{{i}}</td>
+                    <td>{{j}}({{k}})</td>
+                    <td>{{l}}({{m}})</td>
+                    <td class='recovered'>{{n}}({{o}})</td>
+                    <td class='death'>{{p}}({{q}})</td>
+                    <td>{{r}} %</td>
+                    <td>{{s}} {% if not 'No cases confirmed' %}%{% endif %}</td>
+                    <td>{{t}}</td> 
+                {% endfor %}
             </tbody>
             {% endfor %}
         </table>
