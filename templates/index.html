@@ -30,7 +30,7 @@
                     <td class='recovered'>{{n}}({{o}})</td>
                     <td class='death'>{{p}}({{q}})</td>
                     <td>{{r}} %</td>
-                    <td>{{s}} {% if not 'No cases confirmed' %}%{% endif %}</td>
+                    <td>{{s}} {% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
                     <td>{{t}}</td> 
                 {% endfor %}
             </tbody>

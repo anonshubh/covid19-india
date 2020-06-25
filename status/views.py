@@ -53,10 +53,10 @@ class HomeView(View):
         combined=sorted(combined,key=lambda x: x[1],reverse=True)
         comb = []
         for i in range(38):
-            data = zip(combined[i][0],combined[i][1],combined[i][2],combined[i][3],combined[i][4],combined[i][5],combined[i][6],combined[i][7],combined[i][8],combined[i][9],combined[i][10],combined[i][11])
+            data = zip([combined[i][0]],[combined[i][1]],[combined[i][2]],[combined[i][3]],[combined[i][4]],[combined[i][5]],[combined[i][6]],[combined[i][7]],[combined[i][8]],[combined[i][9]],[combined[i][10]],[combined[i][11]])
             comb.append(data)
         context = {
-            'combined':data
+            'combined':comb
         }
         return render(request,'index.html',context)
 
