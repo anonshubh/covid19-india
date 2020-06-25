@@ -50,6 +50,7 @@ class HomeView(View):
             join=[]
             join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],cfr[i],rr[i],rdr[i]])
             combined.append(join)
+        combined=sorted(combined,key=lambda x: x[1],reverse=True)
         data = zip(state,conf,delconf,act,delact,rec,delrec,dth,deldth,cfr,rr,rdr)
         context = {
             'data':data
