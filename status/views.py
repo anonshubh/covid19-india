@@ -45,7 +45,7 @@ class HomeView(View):
                 rdr.append(round(rec[i]/dth[i], 2))
             except:
                 rdr.append('No deaths occured')
-        state[0] = 'India'
+        state[0] = 'INDIA'
         for i in range(38):
             join=[]
             join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],deldth[i],cfr[i],rr[i],rdr[i]])
