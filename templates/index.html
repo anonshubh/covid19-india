@@ -1,36 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>India's fight against COVID-19</title>
-        <style>
-            div{
-                font-weight: bold;
-            }
-            h1,h2{
-                color:darkslateblue;
-                text-align: center;
-            }
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                }
-            table,thead{
-                word-wrap: normal;
-                border: 2px solid black;
-                text-align: center;
-                border-collapse: collapse;
-            }
-            td,th{
-                border: 2px solid black;
-                padding: 5px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
     <body>
+        <p><a href="{% url 'about' %}">About Us</a></p>
         <h1>India</h1>
         <table>
             <thead>
@@ -56,14 +34,5 @@
             </tbody>
             {% endfor %}
         </table>
-        <!-- <h1>India's Graph</h1>
-        <h2>Total Cases</h2>
-        <img src='covidataconf.jpg' alt='Total cases graph' width="800"class='center' >
-        <h2>Active Cases</h2>
-        <img src='covidataact.jpg' alt='Active cases graph' width="800" class='center'>        
-        <h2>Recovered Cases</h2>
-        <img src='covidatarec.jpg' alt='Recovered cases graph' width="800"class='center' >       
-        <h2>Deaths</h2>
-        <img src='covidatadth.jpg' alt='Deaths graph' width="800" class='center'> -->
     </body>
 </html>
