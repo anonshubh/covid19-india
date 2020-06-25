@@ -1,21 +1,127 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}"
+    <link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}">
 </head>
+<style>
+    body{
+        background-color: black;
+        /* margin: 0;
+        padding: 0; */
+        /* display: flex; */
+        /* align-items:center; */
+        /* min-height: 100vh; */
+        /* justify-content: center; */
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  
+    a{
+        padding: 15px 30px;
+        position: relative;
+        color: yellow;
+        text-transform: uppercase;
+        display: inline-block;
+        overflow: hidden;
+        text-decoration: none;
+        font-size:25px;
+        letter-spacing: 4px;
+        transition: 0.2s;
+    }
+    a:hover{
+        color: black;
+        background: orange;
+        font-size:28px;
+        border-radius: 50px;
+        transition-delay: 0.5s;
+        box-shadow: 0  0 10px red, 0 0 40px yellow, 0 0 80px blue;
+    }
+    a span{
+        position: absolute;
+        display: block;
+    }
+   a span:nth-child(1){
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background:linear-gradient(90deg, transparent,  red);
+    }
+     a:hover span:nth-child(1){
+         left: 100%;
+         transition: 0.4s;
+     }
+   a span:nth-child(3){
+      bottom: 0px;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background:linear-gradient(270deg, transparent,  blue);
+    }
+     a:hover span:nth-child(3){
+         right:  100%;
+         transition: 1s;
+         transition-delay: 0.2s;
+     }
+      a span:nth-child(2){
+      top: -100px;
+      right: 0px;
+      width: 2px;
+      height: 100%;
+      background:linear-gradient(180deg, transparent,  yellow);
+    }
+     a:hover span:nth-child(2){
+         top:  100%;
+         transition: 1s;
+         transition-delay: 0.1s;
+     }
+     a span:nth-child(4){
+      bottom: -100px;
+      left:  0px;
+      width: 2px;
+      height: 100%;
+      background:linear-gradient(360deg, transparent, rgb(30, 255, 0));
+    }
+     a:hover span:nth-child(4){
+         bottom:  100%;
+         transition: 1s;
+         transition-delay: 0.3s;
+     } 
+</style>
+
 <body>
-    <h1>About Us</h1>
-    <p>This webpage is designed just as a project by two students studying in IIITDM Kancheepuram. We just wanted to create a website that can show you the COVID 19 spread in India and make it work on slow internet as well.</p>
-    <h2>Our Source Code</h2>
-    <p>Source code repo can be found on <a target="_blank" href='https://github.com/anonshubh/covid19-india'>Github</a></p>
-    <h2>Github Profiles</h2>
+    <h1 style="color: rgb(9, 255, 0);">About Us</h1>
+    <p style="color: red;">This webpage is designed just as a project by two students studying in IIITDM Kancheepuram. We just wanted to
+        create a website that can show you the COVID 19 spread in India and make it work on slow internet as well.</p>
+    <h2 style="color: rgb(9, 255, 0);">Our Source Code</h2>
+    <p style="color: red;">Source code repo can be found on <a target="_blank" href='https://github.com/anonshubh/covid19-india'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Github</a>
+    </p>
+    <h2 style="color: rgb(9, 255, 0);">Github Profiles</h2>
     <ul>
-        <li><a target="_blank" href="https://github.com/TheOxFromOutOfTheBox">Kotamarthi Mohan Himanshu</a></li>
-        <li><a target="_blank" href='https://github.com/anonshubh/'>Shubh Pathak</a></li>
+        <li><a target="_blank" href="https://github.com/TheOxFromOutOfTheBox">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>Kotamarthi Mohan Himanshu</a></li>
+        <!-- <li><a target="_blank" href='https://github.com/anonshubh/'>Shubh Pathak</a></li> -->
+
+        <li><a target="_blank" href='https://github.com/anonshubh/'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Shubh Pathak
+            </a></li>
     </ul>
 </body>
+
 </html>

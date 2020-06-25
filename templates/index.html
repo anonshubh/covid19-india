@@ -1,44 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>India's fight against COVID-19</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <p><a href="{% url 'about' %}">About Us</a></p>
-        <div style="float: right;">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-        </div>
-        <h1>India</h1>
-        <table>
-            <thead>
-                <th>Location</th>
-                <th>Confirmed(Today)</th>
-                <th>Active(Today)</th>
-                <th>Recovered(Today)</th>
-                <th>Deaths(Today)</th>
-                <th>Case Fatality Rate</th>
-                <th>Recovery Ratio</th>
-                <th>Recovery-Death Ratio</th>
-            </thead>
-            <tbody>
-            {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
-                <td>{{i}}</td>
-                <td>{{j}}({{k}})</td>
-                <td>{{l}}({{m}})</td>
-                <td>{{n}}({{o}})</td>
-                <td>{{p}}({{q}})</td>
-                <td>{{r}} %</td>
-                <td>{{s}} {% if not 'No cases confirmed' %}%{% endif %}</td>
-                <td>{{t}}</td> 
-            </tbody>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's fight against COVID-19</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <p style="color: blue;"><a href="{% url 'about' %}">About Us</a></p>
+    <h1>India </h1>
+    <div style="float: right;">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <table>
+        <thead>
+            <th>Location</th>
+            <th>Confirmed(Today)</th>
+            <th class='active'>Active(Today)</th>
+            <th class='recovered'>Recovered(Today)</th>
+            <th class='death'>Deaths(Today)</th>
+            <th>Case Fatality Rate</th>
+            <th>Recovery Ratio</th>
+            <th>Recovery-Death Ratio</th>
+        </thead>
+        <tbody>
+            {% for data in combined %}
+                {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{i}}</td>
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{j}}({{k}})</td>
+                    <td class="active {% if i == 'INDIA' %}india{% endif %}">{{l}}({{m}})</td>
+                    <td class="recovered {% if i == 'INDIA' %}india{% endif %}">{{n}}({{o}})</td>
+                    <td class="death {% if i == 'INDIA' %}india{% endif %}">{{p}}({{q}})</td>
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{r}} %</td>
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{s}}{% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{t}}</td>
             {% endfor %}
-        </table>
-    </body>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+
 </html>

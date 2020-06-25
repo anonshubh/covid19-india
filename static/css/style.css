@@ -2,7 +2,7 @@ div{
     font-weight: bold;
 }
 h1,h2{
-    color:darkslateblue;
+    color:black;
     text-align: center;
 }
 .center {
@@ -13,20 +13,57 @@ h1,h2{
     }
 table,thead{
     word-wrap: normal;
-    border: 2px solid black;
+    border: 1px solid black;
     text-align: center;
     border-collapse: collapse;
+    margin: auto;
 }
-td,th{
-    border: 2px solid black;
+th{
+    border: 3px solid black;
+    padding: 9px;
+    margin: auto;
+    color: black;
+}
+td{
+    border: 1px solid black;
     padding: 5px;
+    margin: auto;
+    color: black;
+    padding:10px''
+    
 }
+
 body{
-    background-color: floralwhite;
+    background-color:white
 }
+
 td:hover{
+    color: rgb(11, 250, 11);
+    background-color: black;
+    font-size: 25px;
+    
+}
+
+a:hover{
+    color: red;
+    font-size: 28px;
+}
+p,a{
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 3px;
     color: orange;
 }
-a:hover{
-    color: orange;
+.recovered{
+    color: green;
+}
+.death{
+    color: red;
+}
+.active{
+    color: blue;
+}
+.india{
+    background-color: #ded3dc;
 }
