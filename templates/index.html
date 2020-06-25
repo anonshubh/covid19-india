@@ -7,9 +7,10 @@
         <title>India's fight against COVID-19</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
+
     <body>
-        <p><a href="{% url 'about' %}">About Us</a></p>
-        <h1>India</h1>
+        <p style="color: blue;"><a href="{% url 'about' %}">About Us</a></p>
+        <h1>India </h1>
         <table>
             <thead>
                 <th>Location</th>
@@ -30,7 +31,7 @@
                 <td>{{p}}({{q}})</td>
                 <td>{{r}} %</td>
                 <td>{{s}} %</td>
-                <td>{{t}}</td> 
+                <td>{{t}}0</td> 
             </tbody>
             {% endfor %}
         </table>
