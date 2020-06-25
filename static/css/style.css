@@ -30,3 +30,9 @@ td:hover{
 a:hover{
     color: orange;
 }
+.recovered:hover{
+    color: green;
+}
+.death:hover{
+    color: red;
+}
