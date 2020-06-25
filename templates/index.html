@@ -24,14 +24,14 @@
             <tbody>
             {% for data in combined %}
                 {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
-                    <td>{{i}}</td>
-                    <td>{{j}}({{k}})</td>
-                    <td class='active'>{{l}}({{m}})</td>
-                    <td class='recovered'>{{n}}({{o}})</td>
-                    <td class='death'>{{p}}({{q}})</td>
-                    <td>{{r}} %</td>
-                    <td>{{s}} {% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
-                    <td>{{t}}</td> 
+                    <td class="{% if i == 'India' %}india{% endif %}" >{{i}}</td>
+                    <td class="{% if i == 'India' %}india{% endif %}" >{{j}}({{k}})</td>
+                    <td class="active {% if i == 'India' %}india{% endif %}">{{l}}({{m}})</td>
+                    <td class="recovered {% if i == 'India' %}india{% endif %}">{{n}}({{o}})</td>
+                    <td class="death {% if i == 'India' %}india{% endif %}">{{p}}({{q}})</td>
+                    <td class="{% if i == 'India' %}india{% endif %}">{{r}} %</td>
+                    <td class="{% if i == 'India' %}india{% endif %}">{{s}} {% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
+                    <td class="{% if i == 'India' %}india{% endif %}">{{t}}</td>
                 {% endfor %}
             </tbody>
             {% endfor %}
