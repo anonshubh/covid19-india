@@ -1,6 +1,6 @@
 ## A Covid19 Data-Fetch Web App for India
 
-**Run Locally**
+**Setup and Run Locally**
 ---
 *Requiremnts:- Python 3.7+*<br>
 -> Change Directory where manage.py exists
