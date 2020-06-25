@@ -14,7 +14,7 @@
             <thead>
                 <th>Location</th>
                 <th>Confirmed(Today)</th>
-                <th>Active(Today)</th>
+                <th class='active'>Active(Today)</th>
                 <th class='recovered'>Recovered(Today)</th>
                 <th class='death'>Deaths(Today)</th>
                 <th>Case Fatality Rate</th>
@@ -26,7 +26,7 @@
                 {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
                     <td>{{i}}</td>
                     <td>{{j}}({{k}})</td>
-                    <td>{{l}}({{m}})</td>
+                    <td class='active'>{{l}}({{m}})</td>
                     <td class='recovered'>{{n}}({{o}})</td>
                     <td class='death'>{{p}}({{q}})</td>
                     <td>{{r}} %</td>
