@@ -16,6 +16,7 @@ table,thead{
     border: 2px solid black;
     text-align: center;
     border-collapse: collapse;
+    margin: auto;
 }
 td,th{
     border: 2px solid black;
