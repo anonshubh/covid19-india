@@ -31,21 +31,23 @@ td{
     padding:10px''
     
 }
+
 body{
     background-color:white
 }
+
 td:hover{
     color: rgb(11, 250, 11);
     background-color: black;
     font-size: 25px;
     
 }
+
 a:hover{
     color: red;
     font-size: 28px;
 
 }
-
 p,a{
     color: black;
     font-size: 25px;

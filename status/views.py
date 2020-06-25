@@ -5,6 +5,7 @@ from django.views.generic import View
 
 class HomeView(View):
     def get(self,request,*args,**kwargs):
+        combined=[]
         state = [] 
         conf = [] 
         delconf = [] 
@@ -32,9 +33,12 @@ class HomeView(View):
             try:
                 cfr.append(round(100*dth[i]/conf[i], 2))
             except:
-                cfr.append(int('0'))
+                cfr.append(float('0.0'))
             try:
-                rr.append(round(100*rec[i]/conf[i], 2))
+                if rec[i]==0 and conf[i]!=0:
+                    rr.append('No Recoveries Yet')
+                else:
+                    rr.append(round(100*rec[i]/conf[i],2))
             except:
                 rr.append('No cases confirmed')
             try:
@@ -42,6 +46,10 @@ class HomeView(View):
             except:
                 rdr.append('No deaths occured')
         state[0] = 'India'
+        for i in range(38):
+            join=[]
+            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],cfr[i],rr[i],rdr[i]])
+            combined.append(join)
         data = zip(state,conf,delconf,act,delact,rec,delrec,dth,deldth,cfr,rr,rdr)
         context = {
             'data':data
