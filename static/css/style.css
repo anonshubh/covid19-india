@@ -30,9 +30,12 @@ td:hover{
 a:hover{
     color: orange;
 }
-.recovered:hover{
+.recovered{
     color: green;
 }
-.death:hover{
+.death{
     color: red;
+}
+.india{
+    background-color: gray;
 }
