@@ -7,9 +7,11 @@
         <title>India's fight against COVID-19</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
+
     <body>
-        <p><a href="{% url 'about' %}">About Us</a></p>
-        <h1>India</h1>
+        <p style="color: blue;"><a href="{% url 'about' %}">About Us</a></p>
+        <h1>
+India </h1>
         <table>
             <thead>
                 <th>Location</th>
@@ -22,6 +24,7 @@
                 <th>Recovery-Death Ratio</th>
             </thead>
             <tbody>
+              
             {% for data in combined %}
                 {% for i,j,k,l,m,n,o,p,q,r,s,t in data %}
                     <td class="{% if i == 'INDIA' %}india{% endif %}" >{{i}}</td>
