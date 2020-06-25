@@ -31,9 +31,12 @@ td:hover{
 a:hover{
     color: orange;
 }
-.recovered:hover{
+.recovered{
     color: green;
 }
-.death:hover{
+.death{
     color: red;
+}
+.active{
+    color: blue;
 }
