@@ -45,17 +45,20 @@ class HomeView(View):
                 rdr.append(round(rec[i]/dth[i], 2))
             except:
                 rdr.append('No deaths occured')
-        state[0] = 'India'
+        state[0] = 'INDIA'
         for i in range(38):
             join=[]
-            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],cfr[i],rr[i],rdr[i]])
+            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],deldth[i],cfr[i],rr[i],rdr[i]])
             combined.append(join)
-        data = zip(state,conf,delconf,act,delact,rec,delrec,dth,deldth,cfr,rr,rdr)
+        combined=sorted(combined,key=lambda x: x[1],reverse=True)
+        comb = []
+        for i in range(38):
+            data = zip([combined[i][0]],[combined[i][1]],[combined[i][2]],[combined[i][3]],[combined[i][4]],[combined[i][5]],[combined[i][6]],[combined[i][7]],[combined[i][8]],[combined[i][9]],[combined[i][10]],[combined[i][11]])
+            comb.append(data)
         context = {
-            'data':data
+            'combined':comb
         }
         return render(request,'index.html',context)
-
 
 def about(request):
     return render(request,'about.html')

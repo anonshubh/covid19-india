@@ -16,6 +16,7 @@ table,thead{
     border: 1px solid black;
     text-align: center;
     border-collapse: collapse;
+    margin: auto;
 }
 th{
     border: 3px solid black;
@@ -46,11 +47,23 @@ td:hover{
 a:hover{
     color: red;
     font-size: 28px;
-
 }
 p,a{
     color: black;
     font-size: 25px;
     text-decoration: none;
     padding: 3px;
+    color: orange;
+}
+.recovered{
+    color: green;
+}
+.death{
+    color: red;
+}
+.active{
+    color: blue;
+}
+.india{
+    background-color: #ded3dc;
 }
