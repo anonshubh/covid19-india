@@ -10,6 +10,9 @@
     <body>
         <p><a href="{% url 'about' %}">About Us</a></p>
         <h1>India</h1>
+        <p class='small'>Case Fatality Rate is the ratio of the number of deaths due to COVID-19 to the number of confirmed cases.</p>
+        <p class='small'>Recovery Death Ratio is the ratio of the number of people recovered from COVID-19 to the number of deaths.</p>
+        <p class='small'>Recovery Rate is the percent of people recovered from COVID-19 after being infected.</p>
         <div class = 'toggleb'>
             <form action="{% url 'home' %}" method="post">
                 {% csrf_token %}
@@ -30,7 +33,7 @@
                 <th class='recovered'>Recovered(Today)</th>
                 <th class='death'>Deaths(Today)</th>
                 <th>Case Fatality Rate</th>
-                <th>Recovery Ratio</th>
+                <th>Recovery Rate</th>
                 <th>Recovery-Death Ratio</th>
             </thead>
             <tbody>

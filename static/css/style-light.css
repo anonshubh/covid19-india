@@ -43,7 +43,9 @@ a:hover{
 .india{
     background-color: #ded3dc;
 }
-
+.small{
+    font-size: small;
+}
 /* .toggleb{
     float: right;
 } */
