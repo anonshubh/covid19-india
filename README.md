@@ -2,7 +2,7 @@
 
 **Setup and Run Locally**
 ---
-*Requiremnts:- Python 3.7+*<br>
+*Requirements:- Python 3.7+*<br>
 -> Change Directory where manage.py exists
 1) `python -m venv env`
 2) `source env/bin/activate` (Mac/Linux)<br>
