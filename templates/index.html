@@ -10,6 +10,11 @@
     <body>
         <p><a href="{% url 'about' %}">About Us</a></p>
         <h1>India</h1>
+        <ul>
+            <li class='small'>Case Fatality Rate: Ratio of the number of deaths due to COVID-19 to the number of confirmed cases.</li>
+            <li class='small'>Recovery Death Ratio: Ratio of the number of people recovered from COVID-19 to the number of deaths.</li>
+            <li class='small'>Recovery Rate: Percent of people recovered from COVID-19.</li>
+        </ul>
         <table>
             <thead>
                 <th>Location</th>
@@ -18,7 +23,7 @@
                 <th class='recovered'>Recovered(Today)</th>
                 <th class='death'>Deaths(Today)</th>
                 <th>Case Fatality Rate</th>
-                <th>Recovery Ratio</th>
+                <th>Recovery Rate</th>
                 <th>Recovery-Death Ratio</th>
             </thead>
             <tbody>
