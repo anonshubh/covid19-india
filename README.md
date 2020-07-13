@@ -3,7 +3,7 @@
 **Setup and Run Locally**
 ---
 *Requirements:- Python 3.7+*<br>
--> Change Directory where manage.py exists
+-> Change Current Directory where manage.py exists
 1) `python -m venv env`
 2) `source env/bin/activate` (Mac/Linux)<br>
    `env/Scripts\activate.ps1` (Windows-Powershell)
