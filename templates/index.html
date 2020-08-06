@@ -35,7 +35,7 @@
                     <td class="death {% if i == 'INDIA' %}india{% endif %}">{{p}}({{q}})</td>
                     <td class="{% if i == 'INDIA' %}india{% endif %}">{{r}} %</td>
                     <td class="{% if i == 'INDIA' %}india{% endif %}">{{s}} {% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
-                    <td class="{% if i == 'INDIA' %}india{% endif %}">{{t}}</td>
+                    <td class="{% if i == 'INDIA' %}india{% endif %}">{% if i == 'State Unassigned' %}0{% else %}{{t}}{% endif %}</td>
                 {% endfor %}
             </tbody>
             {% endfor %}

@@ -58,13 +58,12 @@ class HomeView(View):
                 test.append(testtemp[-1])
             else:
                 test.append('0')
-        sum=0
+        sum_=0
         for i in range(0,len(test)):
             test[i]=int(test[i])
-            sum+=test[i]
-        test[0]=sum
+            sum_+=test[i]
+        test[0]=sum_
         state[0] = 'INDIA'
-        print(state)
         for i in range(38):
             join=[] 
             join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],deldth[i],cfr[i],rr[i],test[i]])
