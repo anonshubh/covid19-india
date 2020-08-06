@@ -18,6 +18,11 @@ class HomeView(View):
         cfr = [] 
         rr = []
         rdr = []
+        testtemp=[]
+        test=[]
+        req1=requests.get('https://api.covid19india.org/state_test_data.json')
+        z=json.loads(req1.text)
+
         request1 = requests.get('https://api.covid19india.org/data.json')
         y = json.loads(request1.text)
         for i in range(38):
@@ -45,16 +50,31 @@ class HomeView(View):
                 rdr.append(round(rec[i]/dth[i], 2))
             except:
                 rdr.append('No deaths occured')
+        for states in state:
+            for i in range(0,len(z['states_tested_data'])):
+                if z['states_tested_data'][i]['state']==states:
+                    testtemp.append(z['states_tested_data'][i]['totaltested'])
+            if(len(testtemp)!=0):
+                test.append(testtemp[-1])
+            else:
+                test.append('0')
+        sum=0
+        for i in range(0,len(test)):
+            test[i]=int(test[i])
+            sum+=test[i]
+        test[0]=sum
         state[0] = 'INDIA'
+        print(state)
         for i in range(38):
-            join=[]
-            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],deldth[i],cfr[i],rr[i],rdr[i]])
+            join=[] 
+            join.extend([state[i],conf[i],delconf[i],act[i],delact[i],rec[i],delrec[i],dth[i],deldth[i],cfr[i],rr[i],test[i]])
             combined.append(join)
         combined=sorted(combined,key=lambda x: x[1],reverse=True)
         comb = []
         for i in range(38):
             data = zip([combined[i][0]],[combined[i][1]],[combined[i][2]],[combined[i][3]],[combined[i][4]],[combined[i][5]],[combined[i][6]],[combined[i][7]],[combined[i][8]],[combined[i][9]],[combined[i][10]],[combined[i][11]])
             comb.append(data)
+        
         context = {
             'combined':comb
         }
