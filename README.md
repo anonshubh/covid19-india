@@ -9,3 +9,8 @@
    `env/Scripts\activate.ps1` (Windows-Powershell)
 3) `pip install -r requirements.txt`
 4) `python manage.py runserver`
+
+**API**
+---
+Yesterday-Data: 
+https://covid19slim.herokuapp.com/api/yesterday/
