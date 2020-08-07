@@ -124,7 +124,7 @@ def yesterday_api(request):
     context = dict()
     for i in state_data:
         context[i.location]={
-            'confirmed':i.location,
+            'confirmed':i.confirmed,
             'confirmed_today':i.confirmed_today,
             'active':i.active,
             'active_today':i.active_today,
