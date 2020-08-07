@@ -12,5 +12,5 @@
 
 **API**
 ---
-Yesterday-Data: 
+Yesterday's-Data: 
 https://covid19slim.herokuapp.com/api/yesterday/
