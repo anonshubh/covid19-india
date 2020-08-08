@@ -176,4 +176,4 @@ def yesterday_data(request):
         'combined':comb
     }
 
-    return render(request,'yest.html',context)
+    return render(request,'yesterday.html',context)
