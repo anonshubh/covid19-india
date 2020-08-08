@@ -137,4 +137,43 @@ def yesterday_api(request):
 
 
 def yesterday_data(request):
-    pass
+    req3=requests.get('https://covid19slim.herokuapp.com/api/yesterday')
+    x=json.loads(req3.text)
+    location=[]
+    conf_total=[]
+    dth_total=[]
+    rec_total=[]
+    act_total=[]
+    delact_yest=[]
+    deldth_yest=[]
+    delconf_yest=[]
+    delrec_yest=[]
+    for state in x: 
+        if state!='India':   
+            location.append(state)
+        else:
+            location.append('INDIA')
+        conf_total.append(x[state]['confirmed'])
+        dth_total.append(x[state]['deaths'])
+        rec_total.append(x[state]['recovered'])
+        act_total.append(x[state]['active'])
+        delact_yest.append(x[state]['active_today'])
+        delconf_yest.append(x[state]['confirmed_today'])
+        deldth_yest.append(x[state]['deaths_today'])
+        delrec_yest.append(x[state]['recovered_today'])
+    combined=[]
+    for i in range(37):
+        join=[] 
+        join.extend([location[i],conf_total[i],delconf_yest[i],act_total[i],delact_yest[i],rec_total[i],delrec_yest[i],dth_total[i],deldth_yest[i]])
+        combined.append(join)
+    combined=sorted(combined,key=lambda x: x[1],reverse=True)
+    comb = []
+    for i in range(37):
+        data = zip([combined[i][0]],[combined[i][1]],[combined[i][2]],[combined[i][3]],[combined[i][4]],[combined[i][5]],[combined[i][6]],[combined[i][7]],[combined[i][8]])
+        comb.append(data)
+
+    context = {
+        'combined':comb
+    }
+
+    return render(request,'yest.html',context)
