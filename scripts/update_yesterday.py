@@ -1,6 +1,5 @@
 from django.utils.timezone import datetime
 from django.shortcuts import reverse
-from django.http import HttpResponseRedirect,JsonResponse
 import json
 import requests
 from status.models import StateData
@@ -10,8 +9,9 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('cron',hour=1)
+@sched.scheduled_job('cron',hour=20,minute=50)
 def yesterday_api():
+    print("Hello000000000000000000000000000000")
     req = requests.get('https://api.covid19india.org/data.json')
     data = json.loads(req.text)
     for i in range(38):
@@ -38,6 +38,6 @@ def yesterday_api():
         state_data.recovered_today = recovered_today
         state_data.deaths = deaths
         state_data.deaths_today = deaths_today
-        state_data.save()
+        # state_data.save()
 
 sched.start()

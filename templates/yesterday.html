@@ -1,39 +1,34 @@
-{%load static%}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Yesterday's Stats</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <p><a href="{% url 'about' %}">About Us</a></p>
-        <h1>India</h1>
-        <a id="index-link" href="{% url 'home' %}">Live</a>
-        <ul>
-            <li class='small'><em>Case Fatality Rate</em>: Ratio of the number of deaths due to COVID-19 to the number of confirmed cases.</li>
-            <li class='small'><em>Recovery Rate</em>: Percent of people recovered from COVID-19.</li>
-        </ul>
-        <table>
-            <thead>
-                <th>Location</th>
-                <th>Confirmed(Yesterday)</th>
-                <th class='active'>Active(Yesterday)</th>
-                <th class='recovered'>Recovered(Yesterday)</th>
-                <th class='death'>Deaths(Yesterday)</th>
-                <!-- <th>Tests Completed</th> -->
-            </thead>
-            <tbody>
-                {% for data in combined %}
-                    {% for i,j,k,l,m,n,o,p,q in data %}
-                        <td class="{% if i == 'INDIA' %}india{% endif %}" >{{i}}</td>
-                        <td class="{% if i == 'INDIA' %}india{% endif %}" >{{j}}({{k}})</td>
-                        <td class="active {% if i == 'INDIA' %}india{% endif %}">{{l}}({{m}})</td>
-                        <td class="recovered {% if i == 'INDIA' %}india{% endif %}">{{n}}({{o}})</td>
-                        <td class="death {% if i == 'INDIA' %}india{% endif %}">{{p}}({{q}})</td>
-                    {% endfor %}
-                </tbody>
-                {% endfor %}
-    </body>
-    </html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<body>
+    <p><a href="{% url 'about' %}">About Us</a></p>
+    <h1>India</h1>
+    <a id="index-link" href="{% url 'home' %}">Live</a>
+    <ul>
+        <li class='small'><em>Case Fatality Rate</em>: Ratio of the number of deaths due to COVID-19 to the number of
+            confirmed cases.</li>
+        <li class='small'><em>Recovery Rate</em>: Percent of people recovered from COVID-19.</li>
+    </ul>
+    <table>
+        <thead>
+            <th>Location</th>
+            <th>Confirmed(Yesterday)</th>
+            <th class='active'>Active(Yesterday)</th>
+            <th class='recovered'>Recovered(Yesterday)</th>
+            <th class='death'>Deaths(Yesterday)</th>
+        </thead>
+        <tbody>
+            {% for data in combined %}
+            {% for i,j,k,l,m,n,o,p,q in data %}
+            <td class="{% if i == 'INDIA' %}india{% endif %}">{{i}}</td>
+            <td class="{% if i == 'INDIA' %}india{% endif %}">{{j}}({{k}})</td>
+            <td class="active {% if i == 'INDIA' %}india{% endif %}">{{l}}({{m}})</td>
+            <td class="recovered {% if i == 'INDIA' %}india{% endif %}">{{n}}({{o}})</td>
+            <td class="death {% if i == 'INDIA' %}india{% endif %}">{{p}}({{q}})</td>
+            {% endfor %}
+        </tbody>
+        {% endfor %}
+{% endblock %}
