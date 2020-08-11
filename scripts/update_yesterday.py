@@ -9,9 +9,8 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('cron',hour=20,minute=51)
+@sched.scheduled_job('cron',hour=1)
 def yesterday_api():
-    print("Hello000000000000000000000000000000")
     req = requests.get('https://api.covid19india.org/data.json')
     data = json.loads(req.text)
     for i in range(38):
@@ -38,6 +37,6 @@ def yesterday_api():
         state_data.recovered_today = recovered_today
         state_data.deaths = deaths
         state_data.deaths_today = deaths_today
-        # state_data.save()
+        state_data.save()
 
 sched.start()
