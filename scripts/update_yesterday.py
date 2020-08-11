@@ -9,7 +9,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('cron',hour=20,minute=50)
+@sched.scheduled_job('cron',hour=20,minute=51)
 def yesterday_api():
     print("Hello000000000000000000000000000000")
     req = requests.get('https://api.covid19india.org/data.json')
