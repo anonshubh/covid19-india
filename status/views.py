@@ -65,8 +65,11 @@ class HomeView(View):
                 test.append('0')
         sum_=0
         for i in range(0,len(test)):
-            test[i]=int(test[i])
-            sum_+=test[i]
+            try:
+                test[i]=int(test[i])
+                sum_+=test[i]
+            except ValueError:
+                continue
         test[0]=sum_
         state[0] = 'INDIA'
         for i in range(38):
