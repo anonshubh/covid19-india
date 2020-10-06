@@ -2,7 +2,7 @@ div{
     font-weight: bold;
 }
 h1,h2{
-    color:darkslateblue;
+    color:red;
     text-align: center;
 }
 .center {
@@ -13,37 +13,53 @@ h1,h2{
     }
 table,thead{
     word-wrap: normal;
-    border: 2px solid black;
+    border: 3px solid black;
     text-align: center;
     border-collapse: collapse;
     margin: auto;
 }
 td,th{
-    border: 2px solid black;
+    border: 2px solid brown;
     padding: 5px;
 }
 body{
     background-color: floralwhite;
+    
 }
 td:hover{
     color: orange;
 }
 a:hover{
     color: orange;
+   background-color: greay;
 }
 .recovered{
     color: green;
+     background-color: grey;
+}
+.recovered:hover{
+    color: red;
+     background-color: grey;
+    font-size:15px
 }
 .death{
     color: red;
 }
 .active{
     color: blue;
+     background-color: greay;
 }
 .india{
     background-color: #ded3dc;
+    font-size:10px
 }
 
 .small{
     font-size: small;
+     background-color: white;
 }
+
+
+
+
+
