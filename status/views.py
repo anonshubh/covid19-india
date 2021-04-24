@@ -6,7 +6,7 @@ from django.views.generic import View
 from django.utils.timezone import datetime
 import csv,numpy
 import pandas as pd
-
+import datetime as dt
 from .models import StateData
 
 
@@ -187,8 +187,13 @@ def yesterday_data(request):
 def vaccineinfo(request):
     url1="http://api.covid19india.org/csv/latest/cowin_vaccine_data_statewise.csv"
 
+    tod = dt.datetime.now()
+    d = dt.timedelta(days = 2)
+    a = tod - d
+    # print(a)
+    datadate=(a.strftime("%d/%m/%Y"))
     data = pd.read_csv(url1)
-    r1=data.loc[data["Updated On"]=="21/04/2021"]
+    r1=data.loc[data["Updated On"]==datadate]
     location=r1["State"].tolist()
     doses=r1["Total Doses Administered"].tolist()
     numVaccinated=r1["Total Individuals Vaccinated"].tolist()
