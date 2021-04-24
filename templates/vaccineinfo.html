@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- <body> -->
+    <!-- <p><a class="mt-4 ml-4 btn btn-primary" href="{% url 'about' %}">About Us</a></p> -->
+    <h1 class="text-center mt-4">Vaccine Data</h1>
+    <!-- {{x}} -->
+    <!-- <a class="ml-4 btn btn-primary" id="yesterday-link" href="{% url 'yesterday' %}">Yesterday cases</a>
+    <a class="ml-4 btn btn-primary" id="index-link" href="{% url 'home' %}">Live cases</a> -->
+    <table class="mt-4 table text-center">
+        <thead>
+            <tr>
+                <th scope="col">Location</th>
+                <th scope="col">Total Doses Administered</th>
+                <th scope="col">Total Individuals Vaccinated </th>
+                <th scope="col">Total Covishield Administered </th>
+                <th scope="col">Total Covaxin Administered </th>
+                <!-- <th scope="col">Handle</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for each,data in x.items %}
+            <tr>
+                <td class="{% if each == 'India'%}india{%endif%}">{{ each }}</td>
+                {% for y in data%}
+                <td class="{% if each == 'India'%}india{%endif%}">{{ y }}</td>
+                {%endfor%}
+                <!-- <td>{{ x.each.1 }}</td> -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<!-- </body> -->
+
+<!-- </html> -->
+{% endblock %}

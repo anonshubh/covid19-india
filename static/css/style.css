@@ -28,9 +28,9 @@ body{
 td:hover{
     color: orange;
 }
-a:hover{
+/* a:hover{
     color: orange;
-}
+} */
 .recovered{
     color: green;
 }

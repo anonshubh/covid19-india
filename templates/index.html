@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block content %}
-<p><a href="{% url 'about' %}">About Us</a></p>
+<!-- <p><a class="mt-4 ml-4 btn btn-primary" href="{% url 'about' %}">About Us</a></p> -->
 <h1>India</h1>
-<a id="yesterday-link" href="{% url 'yesterday' %}">Yesterday</a>
-<ul>
+<!-- <a class="ml-4 btn btn-primary" id="yesterday-link" href="{% url 'yesterday' %}">Yesterday</a>
+<a class="ml-4 btn btn-primary" id="yesterday-link" href="{% url 'vaccineinfo' %}">Vaccine Info</a> -->
+<ul class="mt-3">
     <li class='small'><em>Case Fatality Rate</em>: Ratio of the number of deaths due to COVID-19 to the number of
         confirmed cases.</li>
     <li class='small'><em>Recovery Rate</em>: Percent of people recovered from COVID-19.</li>
 </ul>
-<table>
+<table class="mt-4 table text-center">
     <thead>
         <th>Location</th>
         <th>Confirmed(Today)</th>
