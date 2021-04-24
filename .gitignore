@@ -2,3 +2,5 @@ env
 .env
 
 .vscode
+text.html
+todolist.txt

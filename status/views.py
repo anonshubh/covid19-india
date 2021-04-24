@@ -4,6 +4,8 @@ import json
 import requests
 from django.views.generic import View
 from django.utils.timezone import datetime
+import csv,numpy
+import pandas as pd
 
 from .models import StateData
 
@@ -180,3 +182,28 @@ def yesterday_data(request):
     }
 
     return render(request,'yesterday.html',context)
+
+
+def vaccineinfo(request):
+    url1="http://api.covid19india.org/csv/latest/cowin_vaccine_data_statewise.csv"
+
+    data = pd.read_csv(url1)
+    r1=data.loc[data["Updated On"]=="21/04/2021"]
+    location=r1["State"].tolist()
+    doses=r1["Total Doses Administered"].tolist()
+    numVaccinated=r1["Total Individuals Vaccinated"].tolist()
+    covishield=r1["Total CoviShield Administered"].tolist()
+    covaxin=r1["Total Covaxin Administered"].tolist()
+    for i in range(0,len(numVaccinated)):
+        doses[i]=int(doses[i])
+        numVaccinated[i]=int(numVaccinated[i])
+        covishield[i]=int(covishield[i])
+        covaxin[i]=int(covaxin[i])
+    # print(numVaccinated)
+    # numVaccinated=numpy.format_float_positional(numVaccinated,trim='-')
+    x={}
+    for i in range(0,len(location)):
+        x[location[i]]=[doses[i],numVaccinated[i],covishield[i],covaxin[i]]
+    # print(x)
+    y={"x":x}
+    return render(request,"vaccineinfo.html",context=y)
