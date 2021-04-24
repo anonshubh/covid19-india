@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-<!-- <p><a class="mt-4 ml-4 btn btn-primary" href="{% url 'about' %}">About Us</a></p> -->
 <h1 class="mt-4">India</h1>
-<!-- <a class="ml-4 btn btn-primary" id="yesterday-link" href="{% url 'yesterday' %}">Yesterday</a>
-<a class="ml-4 btn btn-primary" id="yesterday-link" href="{% url 'vaccineinfo' %}">Vaccine Info</a> -->
+
 <ul class="mt-3">
     <li class='small'><em>Case Fatality Rate</em>: Ratio of the number of deaths due to COVID-19 to the number of
         confirmed cases.</li>
     <li class='small'><em>Recovery Rate</em>: Percent of people recovered from COVID-19.</li>
 </ul>
-<table class="mt-4 table text-center">
-    <thead>
+<div class="table-responsive">
+
+    <table class="mt-4 table text-center">
+        <thead>
         <th>Location</th>
         <th>Confirmed(Today)</th>
         <th class='active'>Active(Today)</th>
@@ -35,9 +35,10 @@
             {% if s != 'No Recoveries Yet' and s != 'No cases confirmed' %}%{% endif %}</td>
         <td class="{% if i == 'INDIA' %}india{% endif %}">{% if i == 'State Unassigned' %}0{% else %}{{t}}{% endif %}
         </td>
-        </td>
-        {% endfor %}
-    </tbody>
+    </td>
+    {% endfor %}
+</tbody>
     {% endfor %}
 </table>
+</div>
 {% endblock %}
