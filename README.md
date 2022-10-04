@@ -1,5 +1,8 @@
 ## A Covid19 Data-Fetch Web App for India
+---
+A minimalist website built for up-to-date COVID19 data coverage for users with slow internet connections.
 
+---
 **Setup and Run Locally**
 ---
 *Requirements:- Python 3.8+*<br>
@@ -16,3 +19,4 @@
 ---
 Yesterday's-Data: 
 https://covid19slim.herokuapp.com/api/yesterday/
+
